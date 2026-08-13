@@ -1,0 +1,231 @@
+/*
+div {
+  display: inline-block;
+  padding: 10px
+}
+  */
+
+/* --- Global Resets & Theme --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #1a1a24;
+  color: #f1f1f7;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* --- App Workspace Layout --- */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+#canvasSliders {
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+#directionsPanel {
+  background-color: #242432;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+/* --- Left Column: Canvas Viewport --- */
+#display {
+  position: sticky;
+  top: 40px;
+  background-color: #242432;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+#canvas {
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  display: block;
+}
+
+/* --- Right Column: Panels & Control --- */
+.controls-sidebar {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.customizer-panel {
+  background-color: #242432;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.customizer-panel h2 {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  color: #7983ff;
+  border-bottom: 1px solid #323246;
+  padding-bottom: 10px;
+}
+
+/* --- Form Control Styling --- */
+.control-group {
+  margin-bottom: 18px;
+}
+
+.control-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #b4b4c7;
+}
+
+.control-label span {
+  font-family: monospace;
+  background: #1a1a24;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #00ffcc;
+}
+
+/* Range Inputs */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #323246;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #7983ff;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #949cff;
+}
+
+/* Checkboxes */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #b4b4c7;
+}
+
+.checkbox-label input {
+  accent-color: #7983ff;
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Action & Navigation Buttons --- */
+.button-row {
+  display: flex;
+  gap: 10px;
+}
+
+.button-row-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto; /* Pushes pagination to the bottom if container grows */
+}
+
+button {
+  background-color: #323246;
+  color: #f1f1f7;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-grow: 1;
+}
+
+button:hover:not(:disabled) {
+  background-color: #41415a;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#save, #next {
+  background-color: #7983ff;
+  color: #1a1a24;
+}
+
+#save:hover:not(:disabled), #next:hover:not(:disabled) {
+  background-color: #949cff;
+}
+
+/* --- Save/Load Code Input --- */
+#saveCode {
+  width: 100%;
+  background-color: #1a1a24;
+  border: 1px solid #323246;
+  color: #00ffcc;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  margin-top: 10px;
+}
+
+#saveCode:focus {
+  outline: 1px solid #7983ff;
+}
+
+.justify {
+  display: flex;
+  /* Choose ONE of the spacing options below: */
+  justify-content: space-between; 
+}

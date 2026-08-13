@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Character Poser</title> 
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- Outer Wrapper for Layout -->
+    <div class="app-container">
+        <div id="directionsPanel">
+            <h2>Directions</h2>
+            <br>
+            <span id="directions">Adjust the sliders in the right sidebar to change the character's eyes and eyebrows.</span>
+        </div>
+
+        <div id="canvasSliders">
+            <!-- Left Column: Sticky Canvas Viewport -->
+            <div id="display">
+                <canvas id="canvas" style="background-color: lightblue;" width="300" height="300"></canvas>
+            </div>
+
+            <!-- Right Column: All Options & Sliders -->
+            <div class="controls-sidebar">
+
+                <!-- Eyes Customizer Panel -->
+                <div id="eyes" class="customizer-panel">
+                    <h2>Customize Eyes</h2>
+                    <div class="control-group">
+                        <div class="control-label">Right Eye Shape: <!-- <span id="rightEyeShape-val">0</span> --></div>
+                        <div class="justify">
+                        <span>Sad</span><span>←</span><span>Neutral</span><span>→</span><span>Angry</span>
+                        </div>
+                        <input id="rightEyeShape" type="range" value="0" min="-100" max="100" />
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">Right Eye Close: <!-- <span id="rightEyeClose-val">0</span> --></div> 
+                        <!-- <img src="1x/eye close test.png" alt="close eyes" width="100%"> -->
+                        <div class="justify">
+                        <span>Down</span><span>←</span><span>Neutral</span><span>→</span><span>Up</span>
+                        </div>
+                        <input id="rightEyeClose" type="range" value="0" min="-100" max="100" />
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">Left Eye Shape: <!-- <span id="leftEyeShape-val">0</span> --></div>
+                        <div class="justify">
+                        <span>Sad</span><span>←</span><span>Neutral</span><span>→</span><span>Angry</span>
+                        </div>
+                        <input id="leftEyeShape" type="range" value="0" min="-100" max="100" />
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">Left Eye Close: <!-- <span id="leftEyeClose-val">0</span> --></div>
+                        <div class="justify">
+                        <span>Down</span><span>←</span><span>Neutral</span><span>→</span><span>Up</span>
+                        </div>
+                        <input id="leftEyeClose" type="range" value="0" min="-100" max="100" />
+                    </div>
+                </div>
+
+                <!-- Mouth Customizer Panel -->
+                <div id="mouth" class="customizer-panel">
+                    <h2>Customize Mouth</h2>
+                    <div class="control-group">
+                        <div class="control-label">Mouth Scale X: <!-- <span id="mouthScaleX-val">0</span> --></div>
+                        <!--<img src="1x/mouth x demo.png" alt="narrow or wide" width="100%"> -->
+                        <div class="justify">
+                        <span>Narrow</span><span>←</span><span>Neutral</span><span>→</span><span>Wide</span>
+                        </div>
+                        <input id="mouthScaleX" type="range" value="0" min="-100" max="100" />
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Mouth Scale Y: <!-- <span id="mouthScaleY-val">0</span> --></div>
+                        <!-- <img src="1x/mouth y demo.png" alt="open or closed" width="100%"> -->
+                        <div class="justify">
+                        <span>Closed</span><span>←</span><span>Neutral</span><span>→</span><span>Open</span>
+                        </div>
+                        <input id="mouthScaleY" type="range" value="0" min="-100" max="100" />
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Mouth Shape: <!-- <span id="mouthShape-val">0</span> --></div>
+                        <!-- <img src="1x/mouth demo.png" alt="frown or smile" width="100%"> -->
+                        <div class="justify">
+                        <span>Sad</span><span>←</span><span>Neutral</span><span>→</span><span>Smile</span>
+                        </div>
+                        <input id="mouthShape" type="range" value="0" min="-100" max="100" /> 
+                    </div>
+                </div>
+
+                <!-- Body Customizer Panel -->
+                <div id="fullBody" class="customizer-panel">
+                    <h2>Customize Body</h2>
+                    <div class="control-group">
+                        <div class="control-label">Overall Rotation: <!-- <span id="overallRotation-val">0</span> --></div> 
+                        <div class="justify">
+                        <span>Tilt Left</span><span>←</span><span>Neutral</span><span>→</span><span>Tilt Right</span>
+                        </div>
+                        <input id="overallRotation" type="range" value="0" min="-180" max="180" />
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Torso Rotation: <!-- <span id="bodyRotate-val">0</span> --></div>
+                        <div class="justify">
+                        <span>Tilt Left</span><span>←</span><span>Neutral</span><span>→</span><span>Tilt Right</span>
+                        </div> 
+                        <input id="bodyRotate" type="range" value="0" min="-90" max="90" />
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Head Rotation: <!-- <span id="headRotate-val">0</span> --></div> 
+                        <div class="justify">
+                        <span>Tilt Left</span><span>←</span><span>Neutral</span><span>→</span><span>Tilt Right</span>
+                        </div>
+                        <input id="headRotate" type="range" value="0" min="-90" max="90" />
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="leftArmDirection"> Invert Left Arm Direction
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rightArmDirection"> Invert Right Arm Direction
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="showTracking" checked="true"> Show Tracking Squares
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Action Buttons Container -->
+                <div class="button-row">
+                    <button type="button" id="reset">Reset</button>
+                    <button type="button" id="save" disabled="true">Save</button>
+                    <!-- <button type="button" id="saveImage">Save Image</button> -->
+                    <button type="button" id="load">Load</button>
+                </div>
+
+                <!-- Import/Export Input Box -->
+                <input type="text" id="saveCode" placeholder="Save data code will appear here...">
+
+                <!-- Navigation Buttons Container -->
+                <div class="button-row button-row-nav">
+                    <button type="button" id="previous" disabled="true">Previous</button>
+                    <button type="button" id="next">Next</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://unpkg.com/@rive-app/webgl2"></script>
+    <script src="js/customize.js"></script>
+</body>
+</html>
