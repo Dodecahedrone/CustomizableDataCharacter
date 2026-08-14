@@ -405,6 +405,11 @@ save.addEventListener("click", function() {
     const jsonToSave = JSON.stringify(savedConfiguration);
 
     saveCode.value = jsonToSave;
+
+    window.parent.postMessage({
+        type: "CHARACTER_SAVE",
+        data: jsonToSave
+    }, "*");
     
     // Optional: Temporary visual feedback for the participant
     alert("Character configuration saved successfully!");
