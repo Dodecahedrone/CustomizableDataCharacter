@@ -68,7 +68,7 @@ const featurePositions = [
 let screen = 0;
 
 const r = new rive.Rive({
-    src: "pad_customizable_v7.riv",
+    src: "pad_customizable_v8.riv",
     canvas: document.getElementById("canvas"),
     autoplay: true,
     autoBind: true,
